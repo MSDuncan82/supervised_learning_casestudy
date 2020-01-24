@@ -14,6 +14,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+plt.style.use('fivethirtyeight')
 
 if __name__ == "__main__":
     
