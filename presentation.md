@@ -28,17 +28,20 @@ We were asked to help "Company X", a rideshare company, analyze and reduce their
 * To Impute:
     * **ratings:**  null = mean
     * **phones:**   null = 1 (aka iPhone)
-        * There were 27947 iPhones, 12053 Andriods in churn_train, therefore we imputed the most popular
+        * There were 27947 iPhones, 12053 Andriods in churn_train, therefore we imputed as the most popular
 
 ## Exploratory Data Analysis
 
 The following shows correlation of each feature in the dataset.
 
-<img src=“imgs/heatmap.png”></img>
+The following shows correlation of each feature in the dataset. 
+
+<img src="imgs/heatmap.png"></img>
 
 As you can see below, individuals who took smaller on average trips churned more often.
 
-<img src=“imgs/churndistance.png”></img>
+<img src="imgs/churndistance.png"></img>
+
 
 ## Modeling 
 
