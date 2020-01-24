@@ -36,6 +36,7 @@ The following shows correlation of each feature in the dataset.
 
 The following shows correlation of each feature in the dataset.
 
+![](imgs/heatmap.png)
 
 <img src="imgs/heatmap.png"></img>
 
