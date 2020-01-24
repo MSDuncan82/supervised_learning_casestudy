@@ -12,7 +12,7 @@ from sklearn.neighbors import KNeighborsClassifier
 def clean(df):
     df['signup_date'] = pd.to_datetime(df['signup_date'])
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
-    df['active_user'] = churn['last_trip_date'].apply(lambda x: True if x.month >= 6 else False)
+    df['active_user'] = df['last_trip_date'].apply(lambda x: True if x.month >= 6 else False)
     start = np.array([x.month for x in df['signup_date']])
     end = np.array([x.month for x in df['last_trip_date']])
     df['months_as_user'] = end - start
