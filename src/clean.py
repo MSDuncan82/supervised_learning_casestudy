@@ -32,7 +32,9 @@ def X_y(df):
 
     y = df.pop('active_user').values
     X = df.values
-    return X, y
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 1)
+    return X_train, X_test, y_train, y_test
 
 
 if __name__ == "__main__":
