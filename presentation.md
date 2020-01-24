@@ -1,4 +1,4 @@
-# Supervised Learning Case Study:\n Predicting Rider Churn
+# Supervised Learning Case Study: <br> Predicting Rider Churn
 Mike, Jacob, Clayton, Abel
 
 ## Introduction & Goal
