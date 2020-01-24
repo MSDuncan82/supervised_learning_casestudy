@@ -10,7 +10,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt 
 
 
-def clean_df(df):
+def clean(df):
     df['signup_date'] = pd.to_datetime(df['signup_date'])
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
     df['active_user'] = df['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
