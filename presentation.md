@@ -34,7 +34,7 @@ We were asked to help "Company X", a rideshare company, analyze and reduce their
 
 The following shows correlation of each feature in the dataset.
 
-![](imgs/heatmap.png)
+![]('imgs/heatmap.png')
 
 <img src="imgs/heatmap.png"></img>
 
