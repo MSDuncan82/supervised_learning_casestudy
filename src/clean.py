@@ -22,6 +22,19 @@ def clean(df):
         df[i] = df[i].fillna(means)
     return df
 
+def X_y(df):
+    df['phone'] = df['phone'].apply(lambda x: 1 if x == 'iphone' else 0)
+    cols = df.columns
+    if 'city' in cols:
+        df = pd.get_dummies(df, columns = ['city'], prefix = 'is')
+    
+    df.drop(['is_Winterfell', 'last_trip_date', 'signup_date'], axis = 1, inplace = True) 
+
+    y = df.pop('active_user').values
+    X = df.values
+    return X, y
+
+
 if __name__ == "__main__":
     churn = pd.read_csv('data/churn_train.csv')
     # churn['signup_date'] = pd.to_datetime(churn['signup_date'])
@@ -35,11 +48,11 @@ if __name__ == "__main__":
     df = clean(churn)
 
     
-    cols = df.columns.drop(['phone','city','signup_date', 'last_trip_date', 'months_as_user'])
-    churns = df[cols]
-    y = churns.pop('active_user').values  
-    X = churns
+    # cols = df.columns.drop(['phone','city','signup_date', 'last_trip_date', 'months_as_user'])
+    # churns = df[cols]
+    # y = churns.pop('active_user').values  
+    # X = churns
 
-    X_train, X_test, y_train, y_test =train_test_split(X, y, random_state = 1)
+    # X_train, X_test, y_train, y_test =train_test_split(X, y, random_state = 1)
 
     
