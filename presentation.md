@@ -34,9 +34,11 @@ We were asked to help "Company X", a rideshare company, analyze and reduce their
 
 The following shows correlation of each feature in the dataset.
 
-The following shows correlation of each feature in the dataset. 
+The following shows correlation of each feature in the dataset.
+
 
 <img src="imgs/heatmap.png"></img>
+
 
 As you can see below, individuals who took smaller on average trips churned more often.
 
