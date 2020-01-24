@@ -1,4 +1,4 @@
-# Supervised Learning Case Study:\n Predicting Rider Churn
+# Supervised Learning Case Study: <br> Predicting Rider Churn
 Mike, Jacob, Clayton, Abel
 
 ## Introduction & Goal
@@ -20,7 +20,7 @@ Mike, Jacob, Clayton, Abel
 
 * In churn_train, to impute:
     * **ratings:**  null = mean
-    * **phones:**   null = 1  (aka iPhone)
+    * **phones:**   null = 1 (aka iPhone)
         * There were 27947 iPhones, 12053 Andriods in churn_train, therefore we imputed the most popular
 
 ## Goal
