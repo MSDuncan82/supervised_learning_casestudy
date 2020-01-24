@@ -14,6 +14,10 @@ def clean_df(df):
     df['signup_date'] = pd.to_datetime(df['signup_date'])
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
     df['active_user'] = df['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
+def clean(df):
+    df['signup_date'] = pd.to_datetime(df['signup_date'])
+    df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
+    df['active_user'] = df['last_trip_date'].apply(lambda x: True if x.month >= 6 else False)
     start = np.array([x.month for x in df['signup_date']])
     end = np.array([x.month for x in df['last_trip_date']])
     for i in ['avg_rating_by_driver', 'avg_rating_of_driver']:
