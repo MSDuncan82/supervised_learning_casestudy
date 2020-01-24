@@ -1,16 +1,22 @@
 # Supervised Learning Case Study: <br> Predicting Rider Churn
 Mike, Jacob, Clayton, Abel
 
-## Introduction & Goal
+## Introduction
 
-* 50,000 riders who signed up in January of 2014
-* 10,000 riders were randomly allocated unseen dataset: churn_test.csv
+We were asked to help "Company X", a rideshare company, analyze and reduce their rider churn. We were given records of 50,000 riders who signed up in **January of 2014**, and looked to analyze who and why had churned as of **June 1, 2014**. For our modeling, we trained on 40,000 randomly seleted riders, leaving 10,000 riders as unseen data.
+
+## Goal
+
+* We would like to use this dataset to help understand what factors are the best **predictors for retention**, and offer suggestions to help Company X. 
+
+* Build a **model that minimizes error**, but also a model that allows you to **interpret the factors** that contributed to your predictions.
+
 
 ## Data Description & Impution 
 
-* Seems to be fictional dataset, or the city names were purposely obscured. City names included: Winterfell, King's Landing and Astapor.
+* **Seems to be fictional dataset**, or the city names were purposely obscured. City names included: Winterfell, King's Landing and Astapor.
 
-* Column Names: avg_dist, avg_rating_by_driver, avg_rating_of_driver, avg_surge, city, last_trip_date, phone, signup_date, surge_pct, trips_in_first_30_days, luxury_car_user, weekday_pct
+* **Column Names**: avg_dist, avg_rating_by_driver, avg_rating_of_driver, avg_surge, city, last_trip_date, phone, signup_date, surge_pct, trips_in_first_30_days, luxury_car_user, weekday_pct
 
 * **Churn was assumed to be riders that have not taken a ride in the last 30 days since Date of Reference: June 1, 2014**
 
@@ -24,11 +30,6 @@ Mike, Jacob, Clayton, Abel
     * **phones:**   null = 1 (aka iPhone)
         * There were 27947 iPhones, 12053 Andriods in churn_train, therefore we imputed the most popular
 
-## Goal
-
-* We would like to use this dataset to help understand what factors are the best **predictors for retention**, and offer suggestions to help Company X. 
-
-* Build a **model that minimizes error**, but also a model that allows you to **interpret the factors** that contributed to your predictions.
 
 ## Exploritory Data Analysis
 
