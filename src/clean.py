@@ -10,20 +10,20 @@ from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt 
 
 
-def clean(df):
+def clean_df(df):
     df['signup_date'] = pd.to_datetime(df['signup_date'])
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
-    df['active_user'] = churn['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
+    df['active_user'] = df['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
     start = np.array([x.month for x in df['signup_date']])
     end = np.array([x.month for x in df['last_trip_date']])
-    df['months_as_user'] = end - start
     for i in ['avg_rating_by_driver', 'avg_rating_of_driver']:
         means = df[i].mean()
         df[i] = df[i].fillna(means)
+    
     return df
 
 def X_y(df):
-    df['phone'] = df['phone'].apply(lambda x: 1 if x == 'iphone' else 0)
+    df['phone'] = df['phone'].apply(lambda x: 1 if x == 'Android' else 0)
     cols = df.columns
     if 'city' in cols:
         df = pd.get_dummies(df, columns = ['city'], prefix = 'is')
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # churn['months_as_user'] = end - start
     # churn['months_as_user'] =churn['last_trip_date'].month - churn['signup_date'].month 
 
-    df = clean(churn)
+    df = clean_df(churn)
 
     
     # cols = df.columns.drop(['phone','city','signup_date', 'last_trip_date', 'months_as_user'])
