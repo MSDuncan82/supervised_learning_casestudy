@@ -16,14 +16,14 @@ def clean_df(df):
     df['active_user'] = df['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
     start = np.array([x.month for x in df['signup_date']])
     end = np.array([x.month for x in df['last_trip_date']])
-    df['months_as_user'] = end - start
     for i in ['avg_rating_by_driver', 'avg_rating_of_driver']:
         means = df[i].mean()
         df[i] = df[i].fillna(means)
+    
     return df
 
 def X_y(df):
-    df['phone'] = df['phone'].apply(lambda x: 1 if x == 'iphone' else 0)
+    df['phone'] = df['phone'].apply(lambda x: 1 if x == 'Android' else 0)
     cols = df.columns
     if 'city' in cols:
         df = pd.get_dummies(df, columns = ['city'], prefix = 'is')
