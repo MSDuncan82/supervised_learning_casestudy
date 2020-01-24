@@ -34,8 +34,6 @@ We were asked to help "Company X", a rideshare company, analyze and reduce their
 
 The following shows correlation of each feature in the dataset.
 
-The following shows correlation of each feature in the dataset.
-
 ![](imgs/heatmap.png)
 
 <img src="imgs/heatmap.png"></img>
@@ -94,8 +92,12 @@ The next step is to use this data to do A/B tests targeting the features below. 
 |--------------|
 | Trips in first 30 days |
 | Luxury car user |
-| Android users  |
+| Phone OS users  |
 | Customers not riding during surge |
+
+Suggestions for app owners: 
+Look carefully at user experience for the iOS environment, as we see a large difference in churn rates between that and the android os. 
+Look carefully at number of drivers and customers in cities with large commuter populations. It’s likely there needs to be incentive work made on increasing the number of workers in a given area.
 
 ## Future Work
 
