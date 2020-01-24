@@ -40,8 +40,15 @@ The following shows correlation of each feature in the dataset.
 
 <img src="imgs/heatmap.png"></img>
 
+Figure 1: 
+Train data grouped by Active Users with the average distance traveled by all users from the group.
+Of riders who continued to use the app, the average distance traveled by job was about 6.2 miles. For those who churned out, we saw an average distance of 5.1 miles. Even if every customer rides only once, churned users did spend less money per ride.
 
-As you can see below, individuals who took smaller on average trips churned more often.
+Figure 2:
+Train data grouped by phone type highlights churned users. Of Android riders, 21% stopped using the service. Of iPhone riders, 45% stopped using the service.
+
+Figure 3:
+Train data grouped by city highlights churn by location. For riders in Astapor, we saw 27% churned. For Winterfell, 37%. For King’s Landing, more than 60% of users churned out.
 
 <img src="imgs/churndistance.png"></img>
 
