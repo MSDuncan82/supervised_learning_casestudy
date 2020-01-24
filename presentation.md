@@ -9,16 +9,17 @@ Mike, Jacob, Clayton, Abel
 ## Data Description & Impution 
 
 * Seems to be fictional dataset, or the city names were purposely obscured. City names included: Winterfell, King's Landing and Astapor.
+
 * Column Names: avg_dist, avg_rating_by_driver, avg_rating_of_driver, avg_surge, city, last_trip_date, phone, signup_date, surge_pct, trips_in_first_30_days, luxury_car_user, weekday_pct
 
 * **Churn was assumed to be riders that have not taken a ride in the last 30 days since Date of Reference: June 1, 2014**
 
-* Blank Data (Overall, Train, Test):
+* Null Values (Overall, Train, Test):
     * avg_rating_by_driver: 201, 162, 39
     * avg_rating_of_driver: 8122, 6528, 1594
     * phone:                396, 319, 77
 
-* In churn_train, to impute:
+* To Impute:
     * **ratings:**  null = mean
     * **phones:**   null = 1 (aka iPhone)
         * There were 27947 iPhones, 12053 Andriods in churn_train, therefore we imputed the most popular
