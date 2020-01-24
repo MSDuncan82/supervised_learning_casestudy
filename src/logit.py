@@ -16,7 +16,7 @@ if __name__ == '__main__':
     
     X_train, X_test, y_train, y_test = X_y(df_train)
     
-    log_model = LogisticRegression()
+    log_model = LogisticRegression(class_weight='balanced')
     log_model.fit(X_train, y_train)
     
     y_pred_p = log_model.predict_proba(X_test)

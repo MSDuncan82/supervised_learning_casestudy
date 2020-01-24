@@ -14,22 +14,19 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-plt.style.use('fivethirtyeight')
-
 
 if __name__ == "__main__":
     
     ### Get Data ###
     
-    df_train = clean(pd.read_csv('../data/churn_train.csv'))
-    df_test = clean(pd.read_csv('../data/churn_test.csv'))
+    df_train = clean(pd.read_csv('../data/churn_train.csv')).drop(['avg_rating_by_driver', "city"], axis=1)
+    df_test = clean(pd.read_csv('../data/churn_test.csv')).drop(['avg_rating_by_driver', "city"], axis=1)
    
     X, y = X_y(df_train)
     X = StandardScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 1)
-    X_cols = ['avg_dist', 'avg_rating_by_driver', 'avg_rating_of_driver', 'avg_surge',
-       'phone', 'surge_pct', 'trips_in_first_30_days', 'luxury_car_user',
-        'weekday_pct', 'is_Astapor', "is_King's Landing"]
+    X_cols = ['avg_dist', 'avg_rating_of_driver', 'avg_surge', 'phone', 'surge_pct',
+       'trips_in_first_30_days', 'luxury_car_user', 'weekday_pct']
 
     
     ### Random Forest ###
@@ -109,7 +106,7 @@ if __name__ == "__main__":
     ax.legend((rf_bars[0], cat_bars[0]), ('Random Forest', 'CatBoost'))
 
     plt.tight_layout()
-    plt.savefig('../imgs/full_f_imp.png')
+    plt.savefig('../imgs/full_f_imp_action.png')
     
     fig, ax = plt.subplots(figsize=(10, 10))
         
@@ -132,7 +129,7 @@ if __name__ == "__main__":
     ax.legend((lf1_bars[0], lf2_bars[0]), ('LASSO Log Regression', 'Ridge Log Regression'))
 
     plt.tight_layout()
-    plt.savefig('../imgs/full_coefs.png')
+    plt.savefig('../imgs/full_coefs_action.png')
     
     
     

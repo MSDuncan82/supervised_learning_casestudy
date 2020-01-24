@@ -10,10 +10,6 @@ from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt 
 
 
-def clean_df(df):
-    df['signup_date'] = pd.to_datetime(df['signup_date'])
-    df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
-    df['active_user'] = df['last_trip_date'].apply(lambda x: 1 if x.month >= 6 else 0)
 def clean(df):
     df['signup_date'] = pd.to_datetime(df['signup_date'])
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
@@ -31,14 +27,15 @@ def X_y(df):
     cols = df.columns
     if 'city' in cols:
         df = pd.get_dummies(df, columns = ['city'], prefix = 'is')
+        df.drop(['is_Winterfell'], axis = 1, inplace = True) 
     
-    df.drop(['is_Winterfell', 'last_trip_date', 'signup_date'], axis = 1, inplace = True) 
+    df.drop(['last_trip_date', 'signup_date'], axis = 1, inplace = True) 
 
     y = df.pop('active_user').values
     X = df.values
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 1)
-    return X_train, X_test, y_train, y_test
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 1)
+    return X, y
 
 
 if __name__ == "__main__":
