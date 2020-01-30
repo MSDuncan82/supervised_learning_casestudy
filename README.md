@@ -101,4 +101,3 @@ Look carefully at number of drivers and customers in cities with large commuter 
 ## Future Work
 
 Tune the hyper paramters in order to get better accuracies from the model. This will give us more confidence in the inferences taken from the models.
->>>>>>> Denver
