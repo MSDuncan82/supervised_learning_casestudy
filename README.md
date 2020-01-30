@@ -1,7 +1,6 @@
 
 # Supervised Learning Case Study: <br> Predicting Rider Churn
 Mike, Jacob, Clayton, Abel
->>>>>>> Denver
 
 ## Introduction
 
